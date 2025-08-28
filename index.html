@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SHARP DIAGNOSTIC CENTRE | Lucknow</title>
+  <meta name="description"
+    content="SHARP DIAGNOSTIC CENTRE — Pathology & Diagnostic Lab in Lucknow. Home collection, rapid reports, and modern testing facilities." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* 
+      SHARP DIAGNOSTIC CENTRE - Redesigned for healthcare
+      Color scheme: Blue/Green healthcare theme
+    */
+
+    :root {
+      --primary: #1a75bc;
+      --primary-light: #4a9fe3;
+      --primary-dark: #0d4a7a;
+      --secondary: #2a9d8f;
+      --secondary-light: #4cc4b4;
+      --accent: #e76f51;
+      --bg: #f8fafc;
+      --bg-2: #e6f0f7;
+      --card: #ffffff;
+      --text: #2d3748;
+      --text-light: #718096;
+      --muted: #a0aec0;
+      --success: #38a169;
+      --warning: #ecc94b;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.12);
+      --radius: 12px;
+      --grad: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+    }
+
+    .brand .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--grad);
+      box-shadow: 0 4px 15px rgba(26, 117, 188, 0.3);
+      display: grid;
+      place-content: center;
+      font-weight: 900;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 5px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: var(--bg-2);
+      color: var(--primary);
+    }
+
+    .cta-btn {
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: var(--grad);
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .mobile-menu {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 12px 12px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(230, 240, 247, 0.8)), url('https://images.unsplash.com/photo-1532938911079-9d3c76b58f8f?q=80&w=2070&auto=format&fit=crop') center/cover;
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      padding: 80px 0;
+      display: grid;
+      gap: 20px;
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26, 117, 188, 0.1);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: var(--primary);
+      border: 1px solid rgba(26, 117, 188, 0.2);
+      font-weight: 500;
+    }
+
+    .title {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.1;
+      margin: 0;
+      color: var(--primary-dark);
+    }
+
+    .subtitle {
+      color: var(--text-light);
+      font-size: clamp(16px, 2.2vw, 20px);
+      max-width: 700px;
+      margin-bottom: 10px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn-outline {
+      padding: 12px 22px;
+      border-radius: 10px;
+      border: 2px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .stat {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .stat b {
+      font-size: 24px;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .stat .muted {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .stat-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 4vw, 38px);
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      color: var(--text-light);
+      font-size: 18px;
+    }
+
+    /* Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    @media (max-width: 1000px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card .media {
+      height: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: var(--bg-2);
+    }
+
+    .card .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .media img {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--primary-dark);
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-light);
+      flex-grow: 1;
+    }
+
+    /* Why choose us list */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 25px;
+      border-radius: 12px;
+      background: white;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--grad);
+      display: grid;
+      place-content: center;
+      color: white;
+      font-weight: 900;
+      flex: 0 0 auto;
+      font-size: 20px;
+    }
+
+    .feature-content h3 {
+      margin: 0 0 10px;
+      color: var(--primary-dark);
+    }
+
+    .feature-content p {
+      margin: 0;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 900px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .quote {
+      padding: 25px;
+      border-radius: 12px;
+      background: white;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .quote:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .quote h4 {
+      color: var(--primary);
+      margin: 0 0 15px;
+      font-size: 18px;
+    }
+
+    .quote p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .quote small {
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .gallery .tall {
+      grid-row: span 2;
+    }
+
+    .gallery img {
+      border-radius: 12px;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 950px) {
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery .tall {
+        grid-row: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 8px;
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: white;
+      color: var(--text);
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26, 117, 188, 0.1);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 650px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 50px 0 30px;
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .foot-grid a {
+      color: rgba(255, 255, 255, 0.8);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .foot-grid a:hover {
+      color: white;
+    }
+
+    .foot-grid h4 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .foot-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .foot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .made {
+      margin-top: 40px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+    }
+
+    .made a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 14px;
+      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 16px;
+      border-radius: 999px;
+    }
+
+    /* Floating action buttons */
+    .fab-wrap {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 60;
+    }
+
+    .fab {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+      border: none;
+      cursor: pointer;
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 6px 20px rgba(26, 117, 188, 0.3);
+      font-weight: 900;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(26, 117, 188, 0.4);
+    }
+
+    .fab.secondary {
+      background: var(--secondary);
+      box-shadow: 0 6px 20px rgba(42, 157, 143, 0.3);
+    }
+
+    .fab.secondary:hover {
+      box-shadow: 0 8px 25px rgba(42, 157, 143, 0.4);
+    }
+
+    .tooltip {
+      position: absolute;
+      right: 70px;
+      background: var(--primary-dark);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .fab:hover+.tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* New components */
+    .services-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tab-btn {
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      color: var(--text-light);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .pricing-table th {
+      background: var(--bg-2);
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .pricing-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pricing-table tr:hover {
+      background: #f8fafc;
+    }
+
+    .price {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .team-member {
+      text-align: center;
+    }
+
+    .team-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 5px solid white;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 900px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .accordion {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .accordion-header {
+      padding: 20px;
+      background: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .accordion-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      background: white;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-content.active {
+      max-height: 500px;
+      padding: 0 20px 20px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .blog-img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">SD</div>
+        <div>
+          <div style="font-size:16px">SHARP DIAGNOSTIC CENTRE</div>
+          <small style="color:var(--text-light)">Shop 14, Shahmeena Shah Market, Opp. OPD KGMU, Charak Chouraha,
+            Lucknow</small>
+        </div>
+      </div>
+      <nav aria-label="primary">
+        <ul id="navMenu">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">WhyUs</a></li>
+          <li><a href="#pricing">Packages</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="cta-btn" data-action="whatsapp">Book Home Collection</button>
+      <button class="mobile-menu" id="mobileMenuBtn">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home" aria-label="Intro">
+    <div class="container content">
+      <span class="eyebrow">Founder: Mr. Shrikant Chaudhary • Since 2025</span>
+      <h1 class="title">Advanced Pathology & Diagnostics with Compassionate Care</h1>
+      <p class="subtitle">Fast, accurate results powered by modern technology. Home sample collection across Lucknow,
+        expert reporting, and patient-first support.</p>
+      <div class="hero-cta">
+        <a class="cta-btn" data-action="whatsapp">Book Appointment</a>
+        <a class="btn-outline" href="tel:+919935227466">Call 9935227466</a>
+      </div>
+
+      <div class="stat-strip">
+        <div class="stat"><b>50+ Tests</b>
+          <div class="muted">Routine to Advanced</div>
+        </div>
+        <div class="stat"><b>Home Collection</b>
+          <div class="muted">Across Lucknow</div>
+        </div>
+        <div class="stat"><b>Same-Day Reports</b>
+          <div class="muted">For most profiles</div>
+        </div>
+        <div class="stat"><b>Trusted Team</b>
+          <div class="muted">Experienced Staff</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Diagnostic Services</h2>
+        <p class="section-subtitle">Comprehensive healthcare testing with accuracy and care</p>
+      </div>
+
+      <div class="services-tabs">
+        <button class="tab-btn active" data-tab="all">All Services</button>
+        <button class="tab-btn" data-tab="blood">Blood Tests</button>
+        <button class="tab-btn" data-tab="imaging">Imaging</button>
+        <button class="tab-btn" data-tab="health">Health Packages</button>
+      </div>
+
+      <div class="grid-3">
+        <article class="card" data-category="blood health">
+          <div class="media"><img alt="Home collection" src="blood-test-5601437_1280.jpg" />
+          </div>
+          <h3>Home Sample Collection</h3>
+          <p>Doorstep phlebotomy by trained professionals with sterile, safe protocols. Book via WhatsApp.</p>
+        </article>
+        <article class="card" data-category="health">
+          <div class="media"><img alt="Preventive" src="laboratory-2815638_1280.jpg" />
+          </div>
+          <h3>Preventive Health Packages</h3>
+          <p>Smart packages for routine check-ups: CBC, LFT, KFT, Lipid, Thyroid, HbA1c and more.</p>
+        </article>
+        <article class="card" data-category="blood">
+          <div class="media"><img alt="Immuno" src="pexels-printexstar-11623665.jpg" />
+          </div>
+          <h3>Specialised Tests</h3>
+          <p>Vitamin profiles, infectious disease markers, hormone assays, and advanced biochemistry.</p>
+        </article>
+        <article class="card" data-category="imaging">
+          <div class="media"><img alt="ECG"
+              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=600&auto=format&fit=crop" />
+          </div>
+          <h3>ECG & Cardiac Care</h3>
+          <p>Complete cardiac profiling with ECG, Troponin, CPK-MB, and other essential heart health markers.</p>
+        </article>
+        <article class="card" data-category="blood">
+          <div class="media"><img alt="Diabetes" src="pexels-n-voitkevich-6942252.jpg" />
+          </div>
+          <h3>Diabetes Monitoring</h3>
+          <p>Comprehensive diabetes care with HbA1c, glucose monitoring, and complication screening tests.</p>
+        </article>
+        <article class="card" data-category="imaging">
+          <div class="media"><img alt="Ultrasound"
+              src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=600&auto=format&fit=crop" />
+          </div>
+          <h3>Ultrasound Services</h3>
+          <p>High-resolution ultrasound scanning for abdominal, pelvic, obstetric and other diagnostic needs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose SHARP Diagnostic Centre?</h2>
+        <p class="section-subtitle">Quality you can trust, care you can feel</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="icon">✓</div>
+          <div class="feature-content">
+            <h3>High Accuracy & Compliance</h3>
+            <p>Calibrated analyzers, external quality checks, and standardised SOPs ensure reliable results.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🚑</div>
+          <div class="feature-content">
+            <h3>Quick Home Collection</h3>
+            <p>Early morning slots and express sample pick-up throughout Lucknow city.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">⚡</div>
+          <div class="feature-content">
+            <h3>Fast Reporting</h3>
+            <p>Digital delivery of reports via WhatsApp & Email. Most routine tests same-day.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <div class="feature-content">
+            <h3>Patient Support</h3>
+            <p>Caring staff available for test preparation guidance and follow-up queries.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🏆</div>
+          <div class="feature-content">
+            <h3>Expert Team</h3>
+            <p>Qualified pathologists and technicians with years of diagnostic experience.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">💻</div>
+          <div class="feature-content">
+            <h3>Digital Reports</h3>
+            <p>
+              Get your reports via WhatsApp using our website or by contacting us directly.
+            </p>
+            .</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Health Checkup Packages</h2>
+        <p class="section-subtitle">Affordable preventive healthcare for everyone</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Basic Wellness</h3>
+          <div class="price">₹799</div>
+          <ul style="padding-left: 20px; margin: 15px 0; color: var(--text-light);">
+            <li>Complete Blood Count (CBC)</li>
+            <li>Blood Sugar Fasting</li>
+            <li>Lipid Profile</li>
+            <li>Creatinine</li>
+            <li>Doctor Consultation</li>
+          </ul>
+          <button class="cta-btn" style="width: 100%; margin-top: auto;">Book Now</button>
+        </div>
+
+        <div class="card">
+          <h3>Executive Health</h3>
+          <div class="price">₹2499</div>
+          <ul style="padding-left: 20px; margin: 15px 0; color: var(--text-light);">
+            <li>Complete Blood Count (CBC)</li>
+            <li>Liver Function Test</li>
+            <li>Kidney Function Test</li>
+            <li>Thyroid Profile (T3, T4, TSH)</li>
+            <li>Diabetes Screening</li>
+            <li>Vitamin D & B12</li>
+            <li>Doctor Consultation</li>
+          </ul>
+          <button class="cta-btn" style="width: 100%; margin-top: auto;">Book Now</button>
+        </div>
+
+        <div class="card">
+          <h3>Comprehensive Care</h3>
+          <div class="price">₹3999</div>
+          <ul style="padding-left: 20px; margin: 15px 0; color: var(--text-light);">
+            <li>All Executive Health tests</li>
+            <li>Cardiac Risk Markers</li>
+            <li>Complete Hormone Profile</li>
+            <li>Cancer Screening Markers</li>
+            <li>Vitamin Panel (D, B12, B9)</li>
+            <li>Iron Studies</li>
+            <li>Advanced Doctor Consultation</li>
+          </ul>
+          <button class="cta-btn" style="width: 100%; margin-top: auto;">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Expert Team</h2>
+        <p class="section-subtitle">Meet our qualified healthcare professionals</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=300&auto=format&fit=crop"
+            alt="Dr. Sharma" class="team-img">
+          <h3>Dr. Rajesh Sharma</h3>
+          <p style="color: var(--primary);">Senior Pathologist</p>
+          <p style="color: var(--text-light);">MBBS, MD Pathology<br>15+ years experience</p>
+        </div>
+
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&auto=format&fit=crop"
+            alt="Dr. Singh" class="team-img">
+          <h3>Dr. Priya Singh</h3>
+          <p style="color: var(--primary);">Clinical Biochemist</p>
+          <p style="color: var(--text-light);">MSc, PhD Biochemistry<br>12+ years experience</p>
+        </div>
+
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=300&auto=format&fit=crop"
+            alt="Mr. Verma" class="team-img">
+          <h3>Mr. Alok Verma</h3>
+          <p style="color: var(--primary);">Chief Radiologist</p>
+          <p style="color: var(--text-light);">BSc Radiology, DMRD<br>10+ years experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Inside Our Lab</h2>
+        <p class="section-subtitle">Modern, clean, and patient-friendly environment</p>
+      </div>
+      <div class="gallery">
+        <img class="tall"
+          src="https://images.unsplash.com/photo-1585432959449-b1c1d5d2a381?q=80&w=600&auto=format&fit=crop"
+          alt="Lab 1">
+        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=600&auto=format&fit=crop"
+          alt="Lab 2">
+        <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f3b5?q=80&w=600&auto=format&fit=crop"
+          alt="Lab 3">
+        <img src="https://images.unsplash.com/photo-1581591524425-c7e0978865b0?q=80&w=600&auto=format&fit=crop"
+          alt="Lab 4">
+        <img src="https://images.unsplash.com/photo-1582560475099-48b22d67d2bf?q=80&w=600&auto=format&fit=crop"
+          alt="Lab 5">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What Our Patients Say</h2>
+        <p class="section-subtitle">Real experiences from our community in Lucknow</p>
+      </div>
+      <div class="testimonials">
+        <div class="quote">
+          <h4>⭐️⭐️⭐️⭐️⭐️ Fast & Professional</h4>
+          <p>Home collection was on time and reports arrived the same day on WhatsApp. Great service!</p><small>— Ananya
+            S.</small>
+        </div>
+        <div class="quote">
+          <h4>⭐️⭐️⭐️⭐️⭐️ Clean & Modern</h4>
+          <p>Centre is hygienic and staff is polite. The phlebotomist was very skilled.</p><small>— Rohan K.</small>
+        </div>
+        <div class="quote">
+          <h4>⭐️⭐️⭐️⭐️⭐️ Trusted Team</h4>
+          <p>They explained the test prep clearly and guided me through my packages. Highly recommend.</p><small>—
+            Farhan A.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Get answers to common questions about our services</p>
+      </div>
+
+      <div class="accordions">
+        <div class="accordion">
+          <div class="accordion-header">
+            How do I prepare for my blood test?
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Most blood tests require fasting for 8-12 hours. Drink water to stay hydrated. Avoid smoking and alcohol
+              before the test. Continue prescribed medications unless your doctor advises otherwise.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            How long does it take to get reports?
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Routine test reports are available within 24 hours. Specialized tests may take 2-3 days. Emergency tests
+              can be expedited on request. All reports are delivered digitally via WhatsApp and email.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            What areas do you serve for home collection?
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>We provide home collection services across Lucknow including Alambagh, Aminabad, Aliganj, Gomti Nagar,
+              Indira Nagar, Hazratganj, and surrounding areas. Please call to confirm service in your location.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            Do you accept insurance?
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>We are empaneled with major insurance providers and TPA companies. Please bring your insurance card and
+              ID proof when visiting our center. For home collection, please check with your insurance provider about
+              cashless facilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contact & Booking</h2>
+        <p class="section-subtitle">We're here to help. Reach us on WhatsApp or call for instant support</p>
+      </div>
+
+      <div class="contact-wrap">
+        <form id="contactForm" aria-label="Contact form">
+          <div class="form-row">
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="Your number" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="service">Select Service</label>
+              <select id="service" name="service">
+                <option>Home Sample Collection</option>
+                <option>Full Body Checkup</option>
+                <option>Diabetes Profile</option>
+                <option>Thyroid Profile</option>
+                <option>Vitamin D/B12</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="pincode">Pincode / Area</label>
+              <input id="pincode" name="pincode" placeholder="e.g., 226003 or area" />
+            </div>
+          </div>
+
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Any specific request or preferred time?"></textarea>
+
+          <div style="display:flex;gap:12px;align-items:center;margin-top:20px;flex-wrap:wrap">
+            <button type="submit" class="cta-btn">Send on WhatsApp</button>
+            <a class="btn-outline" href="tel:+919935227466">Call Now</a>
+            <span class="badge">Open 7 Days • 7:00 AM – 9:00 PM</span>
+          </div>
+        </form>
+
+        <aside class="card">
+          <h3>Visit Us</h3>
+          <p><strong>SHARP DIAGNOSTIC CENTRE</strong><br>
+            Shop 14, Shahmeena Shah Market,<br>
+            Opposite OPD KGMU, Charak Chouraha,<br>
+            Lucknow, Uttar Pradesh</p>
+          <p><b>Phone:</b> <a href="tel:+919935227466">9935227466</a><br>
+            <b>WhatsApp:</b> <a href="#" data-action="whatsapp">+91 99352 27466</a>
+          </p>
+          <div style="height:200px;border-radius:12px;overflow:hidden;margin-top:15px">
+            <iframe title="Map" width="100%" height="100%" style="border:0" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.347284992912!2d80.9414155759964!3d26.830387864559987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd7e0637ecc1%3A0x6b8b2c5276f7c99c!2sKGMU%20OPD!5e0!3m2!1sen!2sin!4v1714567890123!5m2!1sen!2sin"></iframe>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:15px">
+            <a class="btn-outline" href="#" id="igLink" aria-label="Instagram">Instagram</a>
+            <a class="btn-outline" href="#" aria-label="Facebook">Facebook</a>
+            <a class="btn-outline" href="#" aria-label="Twitter / X">X</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <div class="brand" style="margin:0 0 15px 0; color: white;">
+            <div class="logo">SD</div>
+            <b>SHARP DIAGNOSTIC CENTRE</b>
+          </div>
+          <p style="color: rgba(255,255,255,0.8);">High-quality diagnostics with modern technology and caring
+            professionals in Lucknow.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#why">Why Us</a>
+          <a href="#pricing">Packages</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+919935227466">Call: 9935227466</a>
+          <a href="#" data-action="whatsapp">WhatsApp</a>
+          <p style="color: rgba(255,255,255,0.8); margin-top: 10px;">Shop 14, Shahmeena Shah Market, Opp. OPD KGMU,
+            Charak Chouraha, Lucknow</p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+
+      <div class="made">Made with ❤ by <a id="majidLink" href="#" target="_blank" rel="noopener">Majid Iliyas</a></div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="fab-wrap" aria-label="Quick actions">
+    <button class="fab secondary" id="callFab" title="Call">📞</button><span class="tooltip">Call Now</span>
+    <button class="fab" id="waFab" title="WhatsApp">💬</button><span class="tooltip">Chat on WhatsApp</span>
+  </div>
+
+  <script>
+    // ====== BASIC "BACKEND" LOGIC IN JS (Client-side routing) ======
+    // All WhatsApp actions funnel through this helper to keep it consistent
+    const PHONE_PLAIN = "9935227466";
+    const PHONE_INTL = "919935227466"; // with India country code
+    const WA_BASE = "https://wa.me/";
+
+    function openWhatsAppWithMessage(message) {
+      const text = encodeURIComponent(message);
+      const url = `${WA_BASE}${PHONE_INTL}?text=${text}`;
+      window.open(url, "_blank");
+    }
+
+    // Hook up all elements that have data-action="whatsapp"
+    document.querySelectorAll('[data-action="whatsapp"]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openWhatsAppWithMessage("Hello SHARP Diagnostic Centre, I would like to book a test / home sample collection.");
+      });
+    });
+
+    // Floating buttons
+    document.getElementById('waFab').addEventListener('click', () => {
+      openWhatsAppWithMessage("Hi, I need assistance with a test booking.");
+    });
+    document.getElementById('callFab').addEventListener('click', () => {
+      window.location.href = `tel:+${PHONE_INTL}`;
+    });
+
+    // Contact form -> WhatsApp with auto-generated message
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const pincode = document.getElementById('pincode').value.trim();
+      const msg = document.getElementById('message').value.trim();
+
+      const composed = `New enquiry from website:%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Service: ${service}%0A
+Area/Pincode: ${pincode || "-"}%0A
+Message: ${msg || "-"}%0A
+Please confirm the slot for home collection.`;
+
+      openWhatsAppWithMessage(composed);
+      form.reset();
+    });
+
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('show');
+    });
+
+    // Active navigation link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Service tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const serviceCards = document.querySelectorAll('.card[data-category]');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        tabBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-tab');
+
+        if (filter === 'all') {
+          serviceCards.forEach(card => {
+            card.style.display = 'flex';
+          });
+        } else {
+          serviceCards.forEach(card => {
+            if (card.getAttribute('data-category').includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+
+    // Accordion functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isActive = content.classList.contains('active');
+
+        // Close all accordions
+        document.querySelectorAll('.accordion-content').forEach(item => {
+          item.classList.remove('active');
+        });
+        document.querySelectorAll('.accordion-header span').forEach(item => {
+          item.textContent = '+';
+        });
+
+        // Open clicked accordion if it wasn't already open
+        if (!isActive) {
+          content.classList.add('active');
+          header.querySelector('span').textContent = '-';
+        }
+      });
+    });
+
+    // Replace this with your real Instagram link when ready
+    document.getElementById('majidLink').addEventListener('click', (e) => {
+      // If '#' (placeholder), prevent scroll to top
+      if (e.currentTarget.getAttribute('href') === '#') { e.preventDefault(); }
+      // Example: e.currentTarget.href = "https://instagram.com/yourprofile";
+    });
+
+    // Social placeholders (set actual links later)
+    document.getElementById('igLink').addEventListener('click', (e) => {
+      if (e.currentTarget.getAttribute('href') === '#') { e.preventDefault(); }
+    });
+  </script>
+</body>
+
+</html>
