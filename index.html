@@ -15,29 +15,30 @@
     rel="stylesheet">
   <style>
     /* 
-      SHARP DIAGNOSTIC CENTRE - Redesigned for healthcare
-      Color scheme: Blue/Green healthcare theme
+      SHARP DIAGNOSTIC CENTRE - Redesigned with blue-green theme
+      Mobile-responsive with side navigation
     */
 
     :root {
-      --primary: #1a75bc;
+      --primary: #0d4a7a;
       --primary-light: #4a9fe3;
-      --primary-dark: #0d4a7a;
+      --primary-dark: #0a3558;
       --secondary: #2a9d8f;
       --secondary-light: #4cc4b4;
       --accent: #e76f51;
-      --bg: #f8fafc;
-      --bg-2: #e6f0f7;
-      --card: #ffffff;
-      --text: #2d3748;
-      --text-light: #718096;
-      --muted: #a0aec0;
+      --bg: #0c1a2b;
+      --bg-2: #0f2239;
+      --card: #132c47;
+      --text: #eaf4ff;
+      --text-light: #9fb0c6;
+      --muted: #7a8fa6;
       --success: #38a169;
       --warning: #ecc94b;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.12);
-      --radius: 12px;
-      --grad: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --shadow-light: 0 5px 15px rgba(0, 0, 0, .2);
+      --radius: 16px;
+      --grad: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%);
+      --grad-dark: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
     }
 
     * {
@@ -78,18 +79,18 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(12, 26, 43, 0.95);
       backdrop-filter: blur(10px);
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 0;
-      gap: 20px;
+      padding: 14px 0;
+      gap: 10px;
     }
 
     .brand {
@@ -98,15 +99,16 @@
       gap: 12px;
       font-weight: 800;
       letter-spacing: 0.5px;
-      color: var(--primary);
+      color: var(--text);
+      z-index: 60;
     }
 
     .brand .logo {
       width: 42px;
       height: 42px;
-      border-radius: 10px;
+      border-radius: 12px;
       background: var(--grad);
-      box-shadow: 0 4px 15px rgba(26, 117, 188, 0.3);
+      box-shadow: 0 6px 20px rgba(74, 159, 227, 0.4);
       display: grid;
       place-content: center;
       font-weight: 900;
@@ -124,15 +126,14 @@
     nav a {
       padding: 10px 16px;
       border-radius: 8px;
-      color: var(--text);
+      color: var(--text-light);
       font-weight: 500;
       transition: all 0.3s ease;
     }
 
-    nav a:hover,
-    nav a.active {
-      background: var(--bg-2);
-      color: var(--primary);
+    nav a:hover, nav a.active {
+      background: rgba(74, 159, 227, 0.15);
+      color: var(--text);
     }
 
     .cta-btn {
@@ -143,13 +144,13 @@
       font-weight: 600;
       border: none;
       cursor: pointer;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-light);
       transition: all 0.3s ease;
     }
 
     .cta-btn:hover {
       transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: 0 8px 25px rgba(74, 159, 227, 0.4);
     }
 
     .mobile-menu {
@@ -157,30 +158,156 @@
       background: transparent;
       border: none;
       font-size: 24px;
-      color: var(--primary);
+      color: var(--text);
       cursor: pointer;
+      z-index: 60;
+    }
+
+    /* Video Section */
+    .video-section {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .video-section video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(12, 26, 43, 0.7);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .video-content {
+      max-width: 800px;
+      z-index: 3;
+    }
+    
+    .video-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .video-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: var(--text-light);
+    }
+    
+    .video-cta {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Side Navigation */
+    .side-nav {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background: var(--bg-2);
+      z-index: 100;
+      padding: 80px 30px 30px;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+    }
+
+    .side-nav.open {
+      right: 0;
+    }
+
+    .side-nav ul {
+      list-style: none;
+    }
+
+    .side-nav li {
+      margin-bottom: 10px;
+    }
+
+    .side-nav a {
+      display: block;
+      padding: 12px 15px;
+      border-radius: 8px;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    .side-nav a:hover, .side-nav a.active {
+      background: rgba(74, 159, 227, 0.15);
+      color: var(--text);
+    }
+
+    .close-nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .overlay.open {
+      opacity: 1;
+      visibility: visible;
     }
 
     @media (max-width: 900px) {
       nav ul {
         display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 12px 12px;
-      }
-
-      nav ul.show {
-        display: flex;
       }
 
       .mobile-menu {
         display: block;
+      }
+      
+      .video-content h2 {
+        font-size: 2rem;
+      }
+      
+      .video-content p {
+        font-size: 1rem;
       }
     }
 
@@ -191,7 +318,7 @@
       min-height: 85vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(230, 240, 247, 0.8)), url('https://images.unsplash.com/photo-1532938911079-9d3c76b58f8f?q=80&w=2070&auto=format&fit=crop') center/cover;
+      background: linear-gradient(rgba(12, 26, 43, 0.8), rgba(12, 26, 43, 0.8)), url('https://images.unsplash.com/photo-1532938911079-9d3c76b58f8f?q=80&w=2070&auto=format&fit=crop') center/cover;
     }
 
     .hero .content {
@@ -207,12 +334,12 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(26, 117, 188, 0.1);
+      background: rgba(74, 159, 227, 0.15);
       padding: 8px 16px;
       border-radius: 999px;
       font-size: 14px;
-      color: var(--primary);
-      border: 1px solid rgba(26, 117, 188, 0.2);
+      color: var(--primary-light);
+      border: 1px solid rgba(74, 159, 227, 0.3);
       font-weight: 500;
     }
 
@@ -220,7 +347,7 @@
       font-size: clamp(32px, 5vw, 56px);
       line-height: 1.1;
       margin: 0;
-      color: var(--primary-dark);
+      color: white;
     }
 
     .subtitle {
@@ -240,15 +367,15 @@
     .btn-outline {
       padding: 12px 22px;
       border-radius: 10px;
-      border: 2px solid var(--primary);
+      border: 2px solid var(--primary-light);
       background: transparent;
-      color: var(--primary);
+      color: var(--primary-light);
       font-weight: 600;
       transition: all 0.3s ease;
     }
 
     .btn-outline:hover {
-      background: var(--primary);
+      background: var(--primary-light);
       color: white;
     }
 
@@ -260,22 +387,23 @@
     }
 
     .stat {
-      background: white;
+      background: rgba(19, 44, 71, 0.6);
       border-radius: 12px;
       padding: 20px;
       text-align: center;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-light);
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .stat:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: var(--shadow);
     }
 
     .stat b {
       font-size: 24px;
-      color: var(--primary);
+      color: var(--primary-light);
       display: block;
       margin-bottom: 5px;
     }
@@ -310,7 +438,7 @@
 
     .section-title {
       font-size: clamp(26px, 4vw, 38px);
-      color: var(--primary-dark);
+      color: white;
       margin-bottom: 15px;
     }
 
@@ -342,16 +470,17 @@
       background: var(--card);
       border-radius: var(--radius);
       padding: 25px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-light);
       transition: all 0.3s ease;
       height: 100%;
       display: flex;
       flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: var(--shadow);
     }
 
     .card .media {
@@ -375,7 +504,7 @@
 
     .card h3 {
       margin: 0 0 12px;
-      color: var(--primary-dark);
+      color: white;
       font-size: 20px;
     }
 
@@ -398,14 +527,15 @@
       align-items: flex-start;
       padding: 25px;
       border-radius: 12px;
-      background: white;
-      box-shadow: var(--shadow);
+      background: var(--card);
+      box-shadow: var(--shadow-light);
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .feature:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: var(--shadow);
     }
 
     .icon {
@@ -423,7 +553,7 @@
 
     .feature-content h3 {
       margin: 0 0 10px;
-      color: var(--primary-dark);
+      color: white;
     }
 
     .feature-content p {
@@ -447,18 +577,19 @@
     .quote {
       padding: 25px;
       border-radius: 12px;
-      background: white;
-      box-shadow: var(--shadow);
+      background: var(--card);
+      box-shadow: var(--shadow-light);
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .quote:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: var(--shadow);
     }
 
     .quote h4 {
-      color: var(--primary);
+      color: var(--primary-light);
       margin: 0 0 15px;
       font-size: 18px;
     }
@@ -539,16 +670,17 @@
     }
 
     form {
-      background: white;
+      background: var(--card);
       padding: 30px;
       border-radius: 12px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-light);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     label {
       display: block;
       margin: 15px 0 8px;
-      color: var(--primary-dark);
+      color: var(--primary-light);
       font-weight: 500;
     }
 
@@ -558,8 +690,8 @@
       width: 100%;
       padding: 14px 16px;
       border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      background: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--bg-2);
       color: var(--text);
       outline: none;
       transition: all 0.3s ease;
@@ -569,8 +701,8 @@
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(26, 117, 188, 0.1);
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(74, 159, 227, 0.2);
     }
 
     textarea {
@@ -654,7 +786,7 @@
       color: white;
       background: rgba(255, 255, 255, 0.15);
       padding: 8px 16px;
-      border-radius: 999px;
+      borderRadius: 999px;
     }
 
     /* Floating action buttons */
@@ -676,9 +808,9 @@
       place-content: center;
       border: none;
       cursor: pointer;
-      background: var(--primary);
+      background: var(--grad);
       color: white;
-      box-shadow: 0 6px 20px rgba(26, 117, 188, 0.3);
+      box-shadow: 0 6px 20px rgba(74, 159, 227, 0.3);
       font-weight: 900;
       font-size: 20px;
       transition: all 0.3s ease;
@@ -686,7 +818,7 @@
 
     .fab:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(26, 117, 188, 0.4);
+      box-shadow: 0 8px 25px rgba(74, 159, 227, 0.4);
     }
 
     .fab.secondary {
@@ -716,172 +848,6 @@
       opacity: 1;
       transform: translateX(0);
     }
-
-    /* New components */
-    .services-tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .tab-btn {
-      padding: 12px 24px;
-      border-radius: 30px;
-      background: white;
-      border: 1px solid #e2e8f0;
-      color: var(--text-light);
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 30px 0;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .pricing-table th,
-    .pricing-table td {
-      padding: 15px 20px;
-      text-align: left;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .pricing-table th {
-      background: var(--bg-2);
-      color: var(--primary-dark);
-      font-weight: 600;
-    }
-
-    .pricing-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .pricing-table tr:hover {
-      background: #f8fafc;
-    }
-
-    .price {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .team-member {
-      text-align: center;
-    }
-
-    .team-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 20px;
-      border: 5px solid white;
-      box-shadow: var(--shadow);
-    }
-
-    @media (max-width: 900px) {
-      .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .accordion {
-      margin-bottom: 15px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .accordion-header {
-      padding: 20px;
-      background: white;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      color: var(--primary-dark);
-    }
-
-    .accordion-content {
-      padding: 0 20px;
-      max-height: 0;
-      overflow: hidden;
-      background: white;
-      transition: max-height 0.3s ease;
-    }
-
-    .accordion-content.active {
-      max-height: 500px;
-      padding: 0 20px 20px;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .blog-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .blog-img {
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .blog-content {
-      padding: 20px;
-    }
-
-    @media (max-width: 900px) {
-      .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
@@ -893,17 +859,14 @@
       <div class="brand">
         <div class="logo">SD</div>
         <div>
-          <div style="font-size:16px">SHARP DIAGNOSTIC CENTRE</div>
-          <small style="color:var(--text-light)">Shop 14, Shahmeena Shah Market, Opp. OPD KGMU, Charak Chouraha,
-            Lucknow</small>
+          <div style="font-size:16px">SHARP DIAGNOSTIC CENTRE</div
         </div>
       </div>
       <nav aria-label="primary">
-        <ul id="navMenu">
+        <ul>
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#why">WhyUs</a></li>
-          <li><a href="#pricing">Packages</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -912,6 +875,40 @@
       <button class="mobile-menu" id="mobileMenuBtn">☰</button>
     </div>
   </header>
+
+  <!-- Video Section -->
+  <div class="video-section">
+    <video autoplay muted loop playsinline>
+      <!-- Replace with your actual video file -->
+      <source src="1472167_People_Technology_3840x2160 (1).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay">
+      <div class="video-content">
+        <h2>Advanced Diagnostic Services with Precision</h2>
+        <p>Experience cutting-edge technology and expert care for all your diagnostic needs</p>
+        <div class="video-cta">
+          <a class="cta-btn" data-action="whatsapp">Book Appointment</a>
+          <a class="btn-outline" href="#services">Our Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side Navigation -->
+  <div class="side-nav" id="sideNav">
+    <button class="close-nav" id="closeNav">×</button>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" data-action="whatsapp">Book Home Collection</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
 
   <!-- Hero -->
   <section class="hero" id="home" aria-label="Intro">
@@ -949,47 +946,44 @@
         <h2 class="section-title">Our Diagnostic Services</h2>
         <p class="section-subtitle">Comprehensive healthcare testing with accuracy and care</p>
       </div>
-
-      <div class="services-tabs">
-        <button class="tab-btn active" data-tab="all">All Services</button>
-        <button class="tab-btn" data-tab="blood">Blood Tests</button>
-        <button class="tab-btn" data-tab="imaging">Imaging</button>
-        <button class="tab-btn" data-tab="health">Health Packages</button>
-      </div>
-
+      
       <div class="grid-3">
-        <article class="card" data-category="blood health">
-          <div class="media"><img alt="Home collection" src="blood-test-5601437_1280.jpg" />
+        <article class="card">
+          <div class="media"><img alt="Home collection"
+              src="blood-test-5601437_1280.jpg" />
           </div>
           <h3>Home Sample Collection</h3>
           <p>Doorstep phlebotomy by trained professionals with sterile, safe protocols. Book via WhatsApp.</p>
         </article>
-        <article class="card" data-category="health">
-          <div class="media"><img alt="Preventive" src="laboratory-2815638_1280.jpg" />
+        <article class="card">
+          <div class="media"><img alt="Preventive"
+              src="laboratory-2815638_1280.jpg" />
           </div>
           <h3>Preventive Health Packages</h3>
           <p>Smart packages for routine check-ups: CBC, LFT, KFT, Lipid, Thyroid, HbA1c and more.</p>
         </article>
-        <article class="card" data-category="blood">
-          <div class="media"><img alt="Immuno" src="pexels-printexstar-11623665.jpg" />
+        <article class="card">
+          <div class="media"><img alt="Immuno"
+              src="pexels-printexstar-11623665.jpg" />
           </div>
           <h3>Specialised Tests</h3>
           <p>Vitamin profiles, infectious disease markers, hormone assays, and advanced biochemistry.</p>
         </article>
-        <article class="card" data-category="imaging">
+        <article class="card">
           <div class="media"><img alt="ECG"
               src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=600&auto=format&fit=crop" />
           </div>
           <h3>ECG & Cardiac Care</h3>
           <p>Complete cardiac profiling with ECG, Troponin, CPK-MB, and other essential heart health markers.</p>
         </article>
-        <article class="card" data-category="blood">
-          <div class="media"><img alt="Diabetes" src="pexels-n-voitkevich-6942252.jpg" />
+        <article class="card">
+          <div class="media"><img alt="Diabetes"
+              src="pexels-n-voitkevich-6942252.jpg" />
           </div>
           <h3>Diabetes Monitoring</h3>
           <p>Comprehensive diabetes care with HbA1c, glucose monitoring, and complication screening tests.</p>
         </article>
-        <article class="card" data-category="imaging">
+        <article class="card">
           <div class="media"><img alt="Ultrasound"
               src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=600&auto=format&fit=crop" />
           </div>
@@ -1047,102 +1041,8 @@
           <div class="icon">💻</div>
           <div class="feature-content">
             <h3>Digital Reports</h3>
-            <p>
-              Get your reports via WhatsApp using our website or by contacting us directly.
-            </p>
-            .</p>
+            <p>Access your reports anytime through our secure online portal and mobile app.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing" style="background: var(--bg-2);">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Health Checkup Packages</h2>
-        <p class="section-subtitle">Affordable preventive healthcare for everyone</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Basic Wellness</h3>
-          <div class="price">₹799</div>
-          <ul style="padding-left: 20px; margin: 15px 0; color: var(--text-light);">
-            <li>Complete Blood Count (CBC)</li>
-            <li>Blood Sugar Fasting</li>
-            <li>Lipid Profile</li>
-            <li>Creatinine</li>
-            <li>Doctor Consultation</li>
-          </ul>
-          <button class="cta-btn" style="width: 100%; margin-top: auto;">Book Now</button>
-        </div>
-
-        <div class="card">
-          <h3>Executive Health</h3>
-          <div class="price">₹2499</div>
-          <ul style="padding-left: 20px; margin: 15px 0; color: var(--text-light);">
-            <li>Complete Blood Count (CBC)</li>
-            <li>Liver Function Test</li>
-            <li>Kidney Function Test</li>
-            <li>Thyroid Profile (T3, T4, TSH)</li>
-            <li>Diabetes Screening</li>
-            <li>Vitamin D & B12</li>
-            <li>Doctor Consultation</li>
-          </ul>
-          <button class="cta-btn" style="width: 100%; margin-top: auto;">Book Now</button>
-        </div>
-
-        <div class="card">
-          <h3>Comprehensive Care</h3>
-          <div class="price">₹3999</div>
-          <ul style="padding-left: 20px; margin: 15px 0; color: var(--text-light);">
-            <li>All Executive Health tests</li>
-            <li>Cardiac Risk Markers</li>
-            <li>Complete Hormone Profile</li>
-            <li>Cancer Screening Markers</li>
-            <li>Vitamin Panel (D, B12, B9)</li>
-            <li>Iron Studies</li>
-            <li>Advanced Doctor Consultation</li>
-          </ul>
-          <button class="cta-btn" style="width: 100%; margin-top: auto;">Book Now</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section id="team">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Our Expert Team</h2>
-        <p class="section-subtitle">Meet our qualified healthcare professionals</p>
-      </div>
-
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=300&auto=format&fit=crop"
-            alt="Dr. Sharma" class="team-img">
-          <h3>Dr. Rajesh Sharma</h3>
-          <p style="color: var(--primary);">Senior Pathologist</p>
-          <p style="color: var(--text-light);">MBBS, MD Pathology<br>15+ years experience</p>
-        </div>
-
-        <div class="team-member">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&auto=format&fit=crop"
-            alt="Dr. Singh" class="team-img">
-          <h3>Dr. Priya Singh</h3>
-          <p style="color: var(--primary);">Clinical Biochemist</p>
-          <p style="color: var(--text-light);">MSc, PhD Biochemistry<br>12+ years experience</p>
-        </div>
-
-        <div class="team-member">
-          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=300&auto=format&fit=crop"
-            alt="Mr. Verma" class="team-img">
-          <h3>Mr. Alok Verma</h3>
-          <p style="color: var(--primary);">Chief Radiologist</p>
-          <p style="color: var(--text-light);">BSc Radiology, DMRD<br>10+ years experience</p>
         </div>
       </div>
     </div>
@@ -1192,63 +1092,6 @@
           <h4>⭐️⭐️⭐️⭐️⭐️ Trusted Team</h4>
           <p>They explained the test prep clearly and guided me through my packages. Highly recommend.</p><small>—
             Farhan A.</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" style="background: var(--bg-2);">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Get answers to common questions about our services</p>
-      </div>
-
-      <div class="accordions">
-        <div class="accordion">
-          <div class="accordion-header">
-            How do I prepare for my blood test?
-            <span>+</span>
-          </div>
-          <div class="accordion-content">
-            <p>Most blood tests require fasting for 8-12 hours. Drink water to stay hydrated. Avoid smoking and alcohol
-              before the test. Continue prescribed medications unless your doctor advises otherwise.</p>
-          </div>
-        </div>
-
-        <div class="accordion">
-          <div class="accordion-header">
-            How long does it take to get reports?
-            <span>+</span>
-          </div>
-          <div class="accordion-content">
-            <p>Routine test reports are available within 24 hours. Specialized tests may take 2-3 days. Emergency tests
-              can be expedited on request. All reports are delivered digitally via WhatsApp and email.</p>
-          </div>
-        </div>
-
-        <div class="accordion">
-          <div class="accordion-header">
-            What areas do you serve for home collection?
-            <span>+</span>
-          </div>
-          <div class="accordion-content">
-            <p>We provide home collection services across Lucknow including Alambagh, Aminabad, Aliganj, Gomti Nagar,
-              Indira Nagar, Hazratganj, and surrounding areas. Please call to confirm service in your location.</p>
-          </div>
-        </div>
-
-        <div class="accordion">
-          <div class="accordion-header">
-            Do you accept insurance?
-            <span>+</span>
-          </div>
-          <div class="accordion-content">
-            <p>We are empaneled with major insurance providers and TPA companies. Please bring your insurance card and
-              ID proof when visiting our center. For home collection, please check with your insurance provider about
-              cashless facilities.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -1335,15 +1178,13 @@
             <div class="logo">SD</div>
             <b>SHARP DIAGNOSTIC CENTRE</b>
           </div>
-          <p style="color: rgba(255,255,255,0.8);">High-quality diagnostics with modern technology and caring
-            professionals in Lucknow.</p>
+          <p style="color: rgba(255,255,255,0.8);">High-quality diagnostics with modern technology and caring professionals in Lucknow.</p>
         </div>
         <div>
           <h4>Quick Links</h4>
           <a href="#home">Home</a>
           <a href="#services">Services</a>
           <a href="#why">Why Us</a>
-          <a href="#pricing">Packages</a>
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </div>
@@ -1351,8 +1192,7 @@
           <h4>Contact</h4>
           <a href="tel:+919935227466">Call: 9935227466</a>
           <a href="#" data-action="whatsapp">WhatsApp</a>
-          <p style="color: rgba(255,255,255,0.8); margin-top: 10px;">Shop 14, Shahmeena Shah Market, Opp. OPD KGMU,
-            Charak Chouraha, Lucknow</p>
+          <p style="color: rgba(255,255,255,0.8); margin-top: 10px;">Shop 14, Shahmeena Shah Market, Opp. OPD KGMU, Charak Chouraha, Lucknow</p>
         </div>
         <div>
           <h4>Legal</h4>
@@ -1424,82 +1264,57 @@ Please confirm the slot for home collection.`;
     });
 
     // Mobile menu toggle
-    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-      document.getElementById('navMenu').classList.toggle('show');
+    const sideNav = document.getElementById('sideNav');
+    const overlay = document.getElementById('overlay');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeNav = document.getElementById('closeNav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      sideNav.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeNav.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    });
+
+    overlay.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = 'auto';
     });
 
     // Active navigation link
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-
+    const navLinks = document.querySelectorAll('nav a, .side-nav a');
+    
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
+        if(pageYOffset >= (sectionTop - 200)) {
           current = section.getAttribute('id');
         }
       });
-
+      
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
+        if(link.getAttribute('href').substring(1) === current) {
           link.classList.add('active');
         }
       });
     });
 
-    // Service tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const serviceCards = document.querySelectorAll('.card[data-category]');
-
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        tabBtns.forEach(b => b.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-tab');
-
-        if (filter === 'all') {
-          serviceCards.forEach(card => {
-            card.style.display = 'flex';
-          });
-        } else {
-          serviceCards.forEach(card => {
-            if (card.getAttribute('data-category').includes(filter)) {
-              card.style.display = 'flex';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        }
-      });
-    });
-
-    // Accordion functionality
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        const isActive = content.classList.contains('active');
-
-        // Close all accordions
-        document.querySelectorAll('.accordion-content').forEach(item => {
-          item.classList.remove('active');
-        });
-        document.querySelectorAll('.accordion-header span').forEach(item => {
-          item.textContent = '+';
-        });
-
-        // Open clicked accordion if it wasn't already open
-        if (!isActive) {
-          content.classList.add('active');
-          header.querySelector('span').textContent = '-';
-        }
+    // Close side nav when clicking on a link
+    document.querySelectorAll('.side-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        sideNav.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = 'auto';
       });
     });
 
@@ -1517,4 +1332,4 @@ Please confirm the slot for home collection.`;
   </script>
 </body>
 
-</html>
+</html> 
