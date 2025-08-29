@@ -19,7 +19,7 @@
       Mobile-responsive with side navigation
     */
 
-    :root {
+   :root {
       --primary: #0d4a7a;
       --primary-light: #4a9fe3;
       --primary-dark: #0a3558;
@@ -131,7 +131,8 @@
       transition: all 0.3s ease;
     }
 
-    nav a:hover, nav a.active {
+    nav a:hover,
+    nav a.active {
       background: rgba(74, 159, 227, 0.15);
       color: var(--text);
     }
@@ -173,7 +174,7 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     .video-section video {
       position: absolute;
       top: 0;
@@ -183,7 +184,7 @@
       object-fit: cover;
       z-index: 1;
     }
-    
+
     .video-overlay {
       position: absolute;
       top: 0;
@@ -199,24 +200,24 @@
       text-align: center;
       padding: 20px;
     }
-    
+
     .video-content {
       max-width: 800px;
       z-index: 3;
     }
-    
+
     .video-content h2 {
       font-size: 2.5rem;
       margin-bottom: 20px;
       color: white;
     }
-    
+
     .video-content p {
       font-size: 1.2rem;
       margin-bottom: 30px;
       color: var(--text-light);
     }
-    
+
     .video-cta {
       display: flex;
       gap: 15px;
@@ -259,7 +260,8 @@
       transition: all 0.3s ease;
     }
 
-    .side-nav a:hover, .side-nav a.active {
+    .side-nav a:hover,
+    .side-nav a.active {
       background: rgba(74, 159, 227, 0.15);
       color: var(--text);
     }
@@ -301,11 +303,11 @@
       .mobile-menu {
         display: block;
       }
-      
+
       .video-content h2 {
         font-size: 2rem;
       }
-      
+
       .video-content p {
         font-size: 1rem;
       }
@@ -848,6 +850,7 @@
       opacity: 1;
       transform: translateX(0);
     }
+
   </style>
 </head>
 
@@ -859,21 +862,20 @@
       <div class="brand">
         <div class="logo">SD</div>
         <div>
-          <div style="font-size:16px">SHARP DIAGNOSTIC CENTRE</div
+          <div style="font-size:16px">SHARP DIAGNOSTIC CENTRE</div </div>
         </div>
+        <nav aria-label="primary">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">WhyUs</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="cta-btn" data-action="whatsapp">Book Home Collection</button>
+        <button class="mobile-menu" id="mobileMenuBtn">☰</button>
       </div>
-      <nav aria-label="primary">
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why">WhyUs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="cta-btn" data-action="whatsapp">Book Home Collection</button>
-      <button class="mobile-menu" id="mobileMenuBtn">☰</button>
-    </div>
   </header>
 
   <!-- Video Section -->
@@ -901,7 +903,7 @@
     <ul>
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Us</a></li>
+      <li><a href="#why">WhyUs</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#" data-action="whatsapp">Book Home Collection</a></li>
@@ -946,25 +948,22 @@
         <h2 class="section-title">Our Diagnostic Services</h2>
         <p class="section-subtitle">Comprehensive healthcare testing with accuracy and care</p>
       </div>
-      
+
       <div class="grid-3">
         <article class="card">
-          <div class="media"><img alt="Home collection"
-              src="blood-test-5601437_1280.jpg" />
+          <div class="media"><img alt="Home collection" src="blood-test-5601437_1280.jpg" />
           </div>
           <h3>Home Sample Collection</h3>
           <p>Doorstep phlebotomy by trained professionals with sterile, safe protocols. Book via WhatsApp.</p>
         </article>
         <article class="card">
-          <div class="media"><img alt="Preventive"
-              src="laboratory-2815638_1280.jpg" />
+          <div class="media"><img alt="Preventive" src="laboratory-2815638_1280.jpg" />
           </div>
           <h3>Preventive Health Packages</h3>
           <p>Smart packages for routine check-ups: CBC, LFT, KFT, Lipid, Thyroid, HbA1c and more.</p>
         </article>
         <article class="card">
-          <div class="media"><img alt="Immuno"
-              src="pexels-printexstar-11623665.jpg" />
+          <div class="media"><img alt="Immuno" src="pexels-printexstar-11623665.jpg" />
           </div>
           <h3>Specialised Tests</h3>
           <p>Vitamin profiles, infectious disease markers, hormone assays, and advanced biochemistry.</p>
@@ -977,8 +976,7 @@
           <p>Complete cardiac profiling with ECG, Troponin, CPK-MB, and other essential heart health markers.</p>
         </article>
         <article class="card">
-          <div class="media"><img alt="Diabetes"
-              src="pexels-n-voitkevich-6942252.jpg" />
+          <div class="media"><img alt="Diabetes" src="pexels-n-voitkevich-6942252.jpg" />
           </div>
           <h3>Diabetes Monitoring</h3>
           <p>Comprehensive diabetes care with HbA1c, glucose monitoring, and complication screening tests.</p>
@@ -1161,9 +1159,10 @@
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.347284992912!2d80.9414155759964!3d26.830387864559987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd7e0637ecc1%3A0x6b8b2c5276f7c99c!2sKGMU%20OPD!5e0!3m2!1sen!2sin!4v1714567890123!5m2!1sen!2sin"></iframe>
           </div>
           <div style="display:flex;gap:10px;margin-top:15px">
-            <a class="btn-outline" href="#" id="igLink" aria-label="Instagram">Instagram</a>
-            <a class="btn-outline" href="#" aria-label="Facebook">Facebook</a>
-            <a class="btn-outline" href="#" aria-label="Twitter / X">X</a>
+            <a class="btn-outline" href="https://www.instagram.com/your_username" id="igLink" aria-label="Instagram"
+              target="_blank">Instagram</a>
+            <a class="btn-outline" href="https://www.facebook.com/your_username" aria-label="Facebook"
+              target="_blank">Facebook</a>
           </div>
         </aside>
       </div>
@@ -1178,7 +1177,8 @@
             <div class="logo">SD</div>
             <b>SHARP DIAGNOSTIC CENTRE</b>
           </div>
-          <p style="color: rgba(255,255,255,0.8);">High-quality diagnostics with modern technology and caring professionals in Lucknow.</p>
+          <p style="color: rgba(255,255,255,0.8);">High-quality diagnostics with modern technology and caring
+            professionals in Lucknow.</p>
         </div>
         <div>
           <h4>Quick Links</h4>
@@ -1190,9 +1190,10 @@
         </div>
         <div>
           <h4>Contact</h4>
-          <a href="tel:+919935227466">Call: 9935227466</a>
+          <a href="tel:+919935227466 8957292643">Call: 9935227466 8957292643</a>
           <a href="#" data-action="whatsapp">WhatsApp</a>
-          <p style="color: rgba(255,255,255,0.8); margin-top: 10px;">Shop 14, Shahmeena Shah Market, Opp. OPD KGMU, Charak Chouraha, Lucknow</p>
+          <p style="color: rgba(255,255,255,0.8); margin-top: 10px;">Shop 14, Shahmeena Shah Market, Opp. OPD KGMU,
+            Charak Chouraha, Lucknow</p>
         </div>
         <div>
           <h4>Legal</h4>
@@ -1202,7 +1203,12 @@
         </div>
       </div>
 
-      <div class="made">Made with ❤ by <a id="majidLink" href="#" target="_blank" rel="noopener">Majid Iliyas</a></div>
+      <div class="made">
+        Made with ❤ by
+        <a id="majidLink" href="https://wa.me/917310086133" target="_blank" rel="noopener">
+          Majid Iliyas
+        </a>
+      </div>
     </div>
   </footer>
 
@@ -1290,20 +1296,20 @@ Please confirm the slot for home collection.`;
     // Active navigation link
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a, .side-nav a');
-    
+
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if(pageYOffset >= (sectionTop - 200)) {
+        if (pageYOffset >= (sectionTop - 200)) {
           current = section.getAttribute('id');
         }
       });
-      
+
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if(link.getAttribute('href').substring(1) === current) {
+        if (link.getAttribute('href').substring(1) === current) {
           link.classList.add('active');
         }
       });
@@ -1318,12 +1324,23 @@ Please confirm the slot for home collection.`;
       });
     });
 
-    // Replace this with your real Instagram link when ready
+    // WhatsApp redirect with professional message
     document.getElementById('majidLink').addEventListener('click', (e) => {
-      // If '#' (placeholder), prevent scroll to top
-      if (e.currentTarget.getAttribute('href') === '#') { e.preventDefault(); }
-      // Example: e.currentTarget.href = "https://instagram.com/yourprofile";
+      e.preventDefault(); // prevent default # scroll
+
+      // WhatsApp number with country code
+      const whatsappNumber = "917310086133";
+
+      // Professional pre-filled message
+      const message = "Hello Majid, I am reaching out regarding website development or project-related inquiries. I would like to know more details.";
+
+      // Encode message for URL
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      // Redirect to WhatsApp
+      window.open(whatsappURL, "_blank");
     });
+
 
     // Social placeholders (set actual links later)
     document.getElementById('igLink').addEventListener('click', (e) => {
@@ -1332,4 +1349,4 @@ Please confirm the slot for home collection.`;
   </script>
 </body>
 
-</html> 
+</html>
